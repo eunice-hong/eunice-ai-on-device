@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.graphics.Color" />
+
+        <variable
+            name="menu"
+            type="kr.eunicehong.euniceaiondevice.entity.MainMenu" />
+
+        <variable
+            name="vm"
+            type="kr.eunicehong.euniceaiondevice.android.viewmodel.MainViewModel" />
+
+    </data>
+
+    <Button
+        android:id="@+id/item_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/base_margin_2_0"
+        android:layout_marginTop="@dimen/base_margin_2_0"
+        android:layout_marginRight="@dimen/base_margin_2_0"
+        android:layout_marginBottom="@dimen/base_margin_2_0"
+        android:backgroundTint="@{Color.parseColor(menu.backgroundColor)}"
+        android:maxLines="1"
+        android:minHeight="100dp"
+        android:paddingTop="@dimen/base_margin_2_0"
+        android:onClick="@{() -> vm.onClickMenu(menu.id)}"
+        android:paddingBottom="@dimen/base_margin_2_0"
+        android:text="@{menu.icon + `  `+ menu.title}"
+        android:textSize="20sp"
+        tools:text="@tools:sample/full_names" />
+</layout>
